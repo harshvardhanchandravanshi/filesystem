@@ -1,0 +1,23 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main  w-full min-h-screen bg-zinc-900 p-10 text-white" >
+     <a class="text-blue-400 inline-block mb-10" href="/">Back to home</a>
+     <form action="/edit" method="post">
+        <input class="block w-1/3 rounded-mg outline-none px-5 py-2 bg-zinc-800 text-zinc-600" placeholder="previous name" name="previous" value="<%=filename%>" >
+        <input class="block w-1/3 rounded-mg outline-none px-5 py-2 bg-zinc-800 mt-3" placeholder="new name" name="new">
+        <input class="mt-2 bg-yellow-100 px-5 py-2 rounded-md" type="submit" value="update task">
+        <input action="/delete" method ="post" class="mt-2 bg-red-400 px-5 py-2 rounded-md" type="submit" value="delete">
+    
+    </form>
+    </div>
+</body>
+<script src="javascripts/script.js"></script>
+</html>

@@ -20,9 +20,21 @@ fs.readdir(`./files`,(err,files)=>{
 });
 app.get ("/file/:filename", (req,res)=>{
     fs.readFile(`./files/${req.params.filename}`,"utf-8",(err,fileData)=>{
-        res.render('show',{filename:req.params.filename,fileData:fileData});
+        res.render('show',{filename:req.params.filename,fileData: fileData});
     })
     });
+
+     
+app.get ("/edit/:filename", (req,res)=>{
+        res.render('edit',{filename:req.params.filename});
+        });  
+     
+
+ app.post ("/edit", (req,res)=>{
+        fs.rename(`./files/${req.body.previous}`,`./files/${req.body.new}`,(err)=>{
+            res.redirect("/")
+        })
+        });          
 
 
 app.post ("/create", (req,res)=>{
